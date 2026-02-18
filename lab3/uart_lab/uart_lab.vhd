@@ -37,7 +37,7 @@ architecture behavioral of uart_lab is
 
 begin
 
-  -- clear <= btnC;
+  clear <= btnC;
   -- *****************************
   -- *  synkroniseringsvippor    *
   -- *****************************
@@ -51,31 +51,34 @@ begin
   -- *****************************
   -- *       styrenhet           *
   -- *****************************
-  process(clk) begin
-    if not rx1 and rx2 then
+  --dubbelkolla sensitivity listen kan vara cooked
+  process(clk, rx1, rx2, start) begin
+    if (rx1 = '0') and (rx2 = '1') then
       start <= '1';
     end if;
     if start = '1' then 
       if rising_edge(clk) then
         sp <= '0';
-        if counter = '8' then
+        counter <= counter+1;
+        if counter = "00001101100100" then
           lp <= '1';
-          counter <= '0';
+          counter <= "00000000000000";
           start <= '0';
         end if;
-        counter <= counter+1;
+        if counter = "00000110110010" then
+          sp <= '1';
+        end if;
       end if;
-      if falling_edge(clk) then
-        sp <= '1';      end if;
+    end if;
+  end process;
 
   -- *****************************
   -- * 10 bit skiftregister      *
   -- *****************************
 
-  process(clk) begin
+  process(sp, rx2, sreg) begin
     if sp = '1' then 
-      shift sreg;
-      sreg <= rx2;
+      sreg <= rx2 & sreg(9 downto 1);        --shift_left(sreg, rx2);
     end if;
   end process;
 
@@ -83,17 +86,32 @@ begin
   -- * 2  bit register           *
   -- *****************************
 
-
+process(lp) begin
+  if pos = "11" then
+    pos <= "00";
+  else 
+    pos <= pos+1;
+  end if;
+end process; 
 
   -- *****************************
   -- * 16 bit register           *
   -- *****************************
 
-
+process(lp) begin
+  if pos = "00" then
+    hex4(15 downto 12) <= sreg(3 downto 0);
+  elsif pos = "01" then
+    hex4(11 downto 8) <= sreg(3 downto 0);
+  elsif pos = "10" then
+    hex4(7 downto 4) <= sreg(3 downto 0);
+  elsif pos = "11" then
+    hex4(3 downto 0) <= sreg(3 downto 0);
+  end if;
+end process; 
 
   -- *****************************
   -- * Multiplexad display       *
   -- *****************************
   led: leddriver port map (clk=>clk, seg=>seg, dp=>dp, an=>an, hex4=>hex4);
 end Behavioral;
-

@@ -1,0 +1,324 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Feb 18 14:21:12 2026
+# Process ID: 106437
+# Current directory: /home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/work
+# Command line: vivado -mode batch -source /courses/TSEA83/bin/build.tcl -notrace -journal vivado_synth.jou -log vivado_synth.log -tclargs synth uart_lab.vhd leddriver.vhd Basys3.xdc
+# Log file: /home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/work/vivado_synth.log
+# Journal file: /home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/work/vivado_synth.jou
+# Running On: muxen2-112.ad.liu.se, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 12, Host memory: 16198 MB
+#-----------------------------------------------------------
+source /courses/TSEA83/bin/build.tcl -notrace
+
+############################################################################
+#### Build script 'Version 1.2 - 2024-05-09'
+
+Doing synth
+
+############################################################################
+#### Synthesizing...
+
+Reading: uart_lab.vhd
+Reading: leddriver.vhd
+Reading: Basys3.xdc
+Command: synth_design -top uart_lab -part xc7a35ticpg236-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 106498
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2247.742 ; gain = 403.645 ; free physical = 181 ; free virtual = 16714
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'uart_lab' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:15]
+WARNING: [Synth 8-614] signal 'pos' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:89]
+WARNING: [Synth 8-614] signal 'pos' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:101]
+WARNING: [Synth 8-614] signal 'sreg' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:101]
+INFO: [Synth 8-3491] module 'leddriver' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/leddriver.vhd:5' bound to instance 'led' of component 'leddriver' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'leddriver' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/leddriver.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'leddriver' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/leddriver.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'uart_lab' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:15]
+WARNING: [Synth 8-6014] Unused sequential element lp_reg was removed.  [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:64]
+WARNING: [Synth 8-7129] Port btnC in module uart_lab is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2322.711 ; gain = 478.613 ; free physical = 171 ; free virtual = 16618
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2340.523 ; gain = 496.426 ; free physical = 167 ; free virtual = 16614
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2340.523 ; gain = 496.426 ; free physical = 167 ; free virtual = 16614
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2340.523 ; gain = 0.000 ; free physical = 167 ; free virtual = 16614
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/Basys3.xdc]
+Finished Parsing XDC File [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/Basys3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/Basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/uart_lab_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/uart_lab_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2480.273 ; gain = 0.000 ; free physical = 177 ; free virtual = 16584
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2480.309 ; gain = 0.000 ; free physical = 177 ; free virtual = 16584
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 183 ; free virtual = 16581
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticpg236-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 182 ; free virtual = 16580
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 183 ; free virtual = 16580
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'hex4_reg' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:103]
+WARNING: [Synth 8-327] inferring latch for variable 'sreg_reg' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:81]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 173 ; free virtual = 16582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               14 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 3     
+	   2 Input   14 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design uart_lab has port dp driven by constant 1
+WARNING: [Synth 8-7129] Port btnC in module uart_lab is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 176 ; free virtual = 16573
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 178 ; free virtual = 16573
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 169 ; free virtual = 16574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: i_43/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+     1: i_43/I1 (LUT2)
+     2: i_34/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:93]
+     3: i_34/I1 (LUT2)
+     4: i_43/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+Inferred a: "set_disable_timing -from I1 -to O i_43"
+Found timing loop:
+     0: i_37/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+     1: i_37/I1 (LUT2)
+     2: i_37/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+Inferred a: "set_disable_timing -from I1 -to O i_37"
+Found timing loop:
+     0: i_37/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+     1: i_37/I0 (LUT2)
+     2: i_36/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+     3: i_36/I1 (LUT2)
+     4: i_37/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+Inferred a: "set_disable_timing -from I0 -to O i_37"
+Found timing loop:
+     0: i_43/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+     1: i_43/I0 (LUT2)
+     2: i_36/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+     3: i_36/I1 (LUT2)
+     4: i_37/O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+     5: i_37/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+Inferred a: "set_disable_timing -from I0 -to O i_43"
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 166 ; free virtual = 16571
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: \hex4_reg[15]_i_3 /O (LUT1)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:90]
+     1: \hex4_reg[15]_i_3 /I0 (LUT1)
+     2: \hex4_reg[15]_i_3 /O (LUT1)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+Inferred a: "set_disable_timing -from I0 -to O \hex4_reg[15]_i_3 "
+Found timing loop:
+     0: \hex4_reg[15]_i_2 /O (LUT2)
+      [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+     1: \hex4_reg[15]_i_2 /I0 (LUT2)
+     2: \hex4_reg[15]_i_2 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+Inferred a: "set_disable_timing -from I0 -to O \hex4_reg[15]_i_2 "
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     9|
+|3     |LUT1   |     2|
+|4     |LUT2   |    11|
+|5     |LUT3   |     2|
+|6     |LUT4   |     8|
+|7     |LUT5   |     2|
+|8     |LUT6   |     8|
+|9     |FDPE   |     1|
+|10    |FDRE   |    46|
+|11    |LD     |    26|
+|12    |IBUF   |     2|
+|13    |OBUF   |    12|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 177 ; free virtual = 16575
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 6 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 496.426 ; free physical = 166 ; free virtual = 16574
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2480.309 ; gain = 636.211 ; free physical = 166 ; free virtual = 16574
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2480.309 ; gain = 0.000 ; free physical = 449 ; free virtual = 16860
+INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/Basys3.xdc]
+Finished Parsing XDC File [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/Basys3.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2544.305 ; gain = 0.000 ; free physical = 450 ; free virtual = 16861
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 26 instances were transformed.
+  LD => LDCE: 26 instances
+
+Synth Design complete | Checksum: 50bec376
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 10 Warnings, 6 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 2544.340 ; gain = 1035.504 ; free physical = 450 ; free virtual = 16861
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2004.875; main = 1706.299; forked = 439.707
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4075.762; main = 2544.309; forked = 1627.500
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 451 ; free virtual = 16861
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 451 ; free virtual = 16862
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 451 ; free virtual = 16861
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 450 ; free virtual = 16861
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 450 ; free virtual = 16861
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 450 ; free virtual = 16862
+Write Physdb Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2576.320 ; gain = 0.000 ; free physical = 450 ; free virtual = 16861
+INFO: [Common 17-1381] The checkpoint '/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/work/synth.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 18 14:21:30 2026...

@@ -37,25 +37,47 @@ architecture behavioral of uart_lab is
 
 begin
 
-  clear <= btnC;
-
+  -- clear <= btnC;
   -- *****************************
   -- *  synkroniseringsvippor    *
   -- *****************************
-
-
+  process(clk) begin
+    if rising_edge(clk) then
+      rx1 <= RsRx;
+      rx2 <= rx1;
+    end if;
+  end process;
 
   -- *****************************
   -- *       styrenhet           *
   -- *****************************
-
-
+  process(clk) begin
+    if not rx1 and rx2 then
+      start <= '1';
+    end if;
+    if start = '1' then 
+      if rising_edge(clk) then
+        sp <= '0';
+        if counter = '8' then
+          lp <= '1';
+          counter <= '0';
+          start <= '0';
+        end if;
+        counter <= counter+1;
+      end if;
+      if falling_edge(clk) then
+        sp <= '1';      end if;
 
   -- *****************************
   -- * 10 bit skiftregister      *
   -- *****************************
 
-
+  process(clk) begin
+    if sp = '1' then 
+      shift sreg;
+      sreg <= rx2;
+    end if;
+  end process;
 
   -- *****************************
   -- * 2  bit register           *

@@ -31,9 +31,9 @@ architecture behavioral of uart_lab is
 
     signal s1 : std_logic;          -- state of transmission
     signal start, stop : std_logic; -- start/stop transmission
-    signal counter : unsigned(13 downto 0);           -- transmission length counter
+    signal counter : unsigned(13 downto 0);    -- transmission length counter
 
-    signal bitcount : unsigned(3 downto 0);
+    signal bitcount : unsigned(3 downto 0) := X"0";
 
     signal clear : std_logic;       -- synchronous clear
 
@@ -74,31 +74,28 @@ process(clk) begin
       if s1 = '0' then
         if rx2 = '0' then
           s1 <= '1';
-          counter <= to_unsigned(434,14); -- mitten av startbit
+          counter <= to_unsigned(434,14);
         end if;
 
       else
         if counter = 0 then
           sp <= '1';
           if bitcount = 9 then
+            s1 <= '0';
             stop <= '1';
             bitcount <= (others => '0');
           else
-            stop <= '0';
             bitcount <= bitcount + 1;
           end if;          
-          counter <= to_unsigned(867,14);
-
-          if stop = '1' then
-            s1 <= '0';
-            lp <= '1';
-          end if;
-
+          counter <= to_unsigned(868,14);
         else
           counter <= counter - 1;
         end if;
       end if;
-
+      if stop = '1' then
+        stop <= '0';
+        lp <= '1';
+      end if;
     end if;
   end if;
 end process;

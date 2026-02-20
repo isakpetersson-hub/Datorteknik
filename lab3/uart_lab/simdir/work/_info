@@ -4,6 +4,31 @@ z2
 Z0 !s99 nomlopt
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11e vcom 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -13,10 +38,10 @@ R0
 cModel Technology
 Z1 d/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/simdir
 T_opt
-!s110 1771420856
-V<3hom:`2<EijUF8GKIAA^3
+!s110 1771596477
+Vfm3YF6J[gObTKTnhHamkl2
 04 11 8 work uart_lab_tb behavior 1
-=1-001b213b2c1b-6995bcb8-48d3c-19eba
+=1-001b213b2c1b-69986abd-7825b-23b2e
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work -L work +acc
 tCvgOpt 0
@@ -27,7 +52,7 @@ Z2 w1771411757
 Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 15
+!i122 79
 R1
 Z6 8../leddriver.vhd
 Z7 F../leddriver.vhd
@@ -37,9 +62,9 @@ VldXM_;nh5XnWXol]^TKa<1
 !s100 J@<ZHC=0[^00k0LIN>>G<1
 Z8 OL;C;2021.3;73
 32
-Z9 !s110 1771420854
+Z9 !s110 1771596476
 !i10b 1
-Z10 !s108 1771420854.000000
+Z10 !s108 1771596476.000000
 Z11 !s90 ../uart_lab.vhd|../leddriver.vhd|
 Z12 !s107 ../leddriver.vhd|../uart_lab.vhd|
 !i113 0
@@ -49,7 +74,7 @@ R3
 R4
 R5
 DEx4 work 9 leddriver 0 22 ldXM_;nh5XnWXol]^TKa<1
-!i122 15
+!i122 79
 l18
 L13 47
 VRX[>Wg4U9ZcCWZ5SYaRH32
@@ -64,11 +89,11 @@ R12
 !i113 0
 R13
 Euart_lab
-Z14 w1771420844
+Z14 w1771596470
 R3
 R4
 R5
-!i122 15
+!i122 79
 R1
 Z15 8../uart_lab.vhd
 Z16 F../uart_lab.vhd
@@ -90,11 +115,11 @@ R3
 R4
 R5
 DEx4 work 8 uart_lab 0 22 lz]4Iad;JX_8mYzDFc;H@2
-!i122 15
-l38
-L15 103
-V4^1FkDa?Oc;CzGk`h6_ie0
-!s100 7Mc^Dc7[@jFF;[1a>_O181
+!i122 79
+l40
+L15 149
+VMIk`;Mg7Sjl;ZEkn2;9E70
+!s100 12=FX[Kz^>oD3ec_<f]1]1
 R8
 32
 R9
@@ -109,7 +134,7 @@ Z17 w1771411748
 R3
 R4
 R5
-!i122 16
+!i122 80
 R1
 Z18 8../uart_lab_tb.vhd
 Z19 F../uart_lab_tb.vhd
@@ -131,7 +156,7 @@ R3
 R4
 R5
 DEx4 work 11 uart_lab_tb 0 22 ZoU9aCcIm:U4JaJSAPndL1
-!i122 16
+!i122 80
 l30
 L10 73
 VEOJPCM`0Mfz8Czo?cA1C`3

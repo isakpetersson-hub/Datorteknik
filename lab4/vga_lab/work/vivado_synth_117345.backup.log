@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Feb 23 15:31:22 2026
+# Process ID: 117345
+# Current directory: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work
+# Command line: vivado -mode batch -source /courses/TSEA83/bin/build.tcl -notrace -journal vivado_synth.jou -log vivado_synth.log -tclargs synth vga_lab.vhd kbd_enc.vhd pret_cpu.vhd video_ram.vhd vga_motor/vga_motor.vhd vga_motor/char_rom.vhd Basys3.xdc
+# Log file: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work/vivado_synth.log
+# Journal file: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work/vivado_synth.jou
+# Running On: muxen2-112.ad.liu.se, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 12, Host memory: 16198 MB
+#-----------------------------------------------------------
+source /courses/TSEA83/bin/build.tcl -notrace
+
+############################################################################
+#### Build script 'Version 1.2 - 2024-05-09'
+
+Doing synth
+
+############################################################################
+#### Synthesizing...
+
+Reading: vga_lab.vhd
+Reading: kbd_enc.vhd
+Reading: pret_cpu.vhd
+Reading: video_ram.vhd
+Reading: vga_motor/vga_motor.vhd
+Reading: vga_motor/char_rom.vhd
+Reading: Basys3.xdc
+Command: synth_design -top vga_lab -part xc7a35ticpg236-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 117393
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2247.922 ; gain = 403.645 ; free physical = 984 ; free virtual = 15931
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-2757] this construct is only supported in VHDL 1076-2008 [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:122]
+ERROR: [Synth 8-2757] this construct is only supported in VHDL 1076-2008 [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:162]
+ERROR: [Synth 8-2757] this construct is only supported in VHDL 1076-2008 [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:176]
+INFO: [Synth 8-11252] unit 'behavioral' is ignored due to previous errors [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:230]
+INFO: [Synth 8-10443] VHDL file '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd' is ignored due to errors
+INFO: [Synth 8-638] synthesizing module 'vga_lab' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:30]
+INFO: [Synth 8-3491] module 'KBD_ENC' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/kbd_enc.vhd:17' bound to instance 'U0' of component 'kbd_enc' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'KBD_ENC' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/kbd_enc.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'KBD_ENC' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/kbd_enc.vhd:28]
+INFO: [Synth 8-3491] module 'PRET_CPU' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/pret_cpu.vhd:16' bound to instance 'U1' of component 'pret_cpu' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'PRET_CPU' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/pret_cpu.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'PRET_CPU' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/pret_cpu.vhd:28]
+INFO: [Synth 8-3491] module 'VIDEO_RAM' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/video_ram.vhd:22' bound to instance 'U2' of component 'video_ram' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'VIDEO_RAM' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/video_ram.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'VIDEO_RAM' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/video_ram.vhd:39]
+INFO: [Synth 8-3491] module 'vga_motor' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:15' bound to instance 'U3' of component 'vga_motor' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:110]
+INFO: [Synth 8-638] synthesizing module 'vga_motor' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'vga_motor' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'vga_lab' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:30]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2322.859 ; gain = 478.582 ; free physical = 940 ; free virtual = 15834
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 23 15:31:39 2026...

@@ -37,9 +37,12 @@ architecture Behavioral of vga_motor is
 	signal CR_addr  : unsigned(10 downto 0);       -- address for CHAR_ROM
 	signal CR_data : std_logic_vector(11 downto 0); -- data from CHAR_ROM.
 	
-	signal blank1, blank2, blank : std_logic; -- blanking signal, with delayed versions
-	signal Hsync1, Hsync2 : std_logic;
-	signal Vsync1, Vsync2 : std_logic;
+
+	
+
+	signal blank1, blank2, blank : std_logic := '1'; -- blanking signal, with delayed versions
+	signal Hsync1, Hsync2 : std_logic := '1';
+	signal Vsync1, Vsync2 : std_logic := '1';
 	
 	-- Character image rom:
 	component char_rom is
@@ -98,7 +101,7 @@ begin
 			if clear='1' then
 				Xpixel1 <= (others=>'0');
 			elsif Clk25='1' then
-				if(Xpixel1 = 799)then 
+				if(Xpixel1 = to_unsigned(799,Xpixel1'length))then 
 					Xpixel1 <= (others => '0'); 
 				else
 					Xpixel1 <= Xpixel1 + 1;
@@ -119,11 +122,13 @@ begin
 	-- *******************************
 	process(Xpixel1)
 	begin
-	if (Xpixel1 >= 656 and Xpixel1 <= 751) then
-		Hsync1 <= '0';
-	else 
-		Hsync1 <= '1';
-	end if;
+		if clear = '1' then
+			Hsync1 <= '0';
+		elsif (Xpixel1 >= to_unsigned(656,Xpixel1'length) and Xpixel1 <= to_unsigned(751,Xpixel1'length)) then
+			Hsync1 <= '0';
+		else 
+			Hsync1 <= '1';
+		end if;
 	end process;
 
 
@@ -140,7 +145,7 @@ begin
 			if clear='1' then
 				Ypixel1 <= (others=>'0');	
 			elsif Clk25='1' then
-				if Xpixel1 = 799 then
+				if Xpixel1 = to_unsigned(799,Xpixel1'length) then
 					if Ypixel1 = 524 then
 					  Ypixel1 <= (others=>'0');
 					else
@@ -163,7 +168,9 @@ begin
 	-- *******************************
 	process(Ypixel1, Xpixel1)
 	begin
-		if (Ypixel1 >= 490 and Ypixel1 <= 491) then
+		if clear = '1' then
+			Vsync1 <= '0';
+		elsif (Ypixel1 >= to_unsigned(490,Ypixel1'length) and Ypixel1 <= to_unsigned(491,Ypixel1'length)) then
 			Vsync1 <= '0';
 		else 
 			Vsync1 <=	'1';
@@ -181,7 +188,9 @@ begin
 	-- *******************************
 	process(Xpixel1, Ypixel1)
 	begin
-		if (Xpixel1 >= 640) or (Ypixel1 >= 480) then
+		if clear = '1' then
+			blank1 <= '0'; 
+		elsif (Xpixel1 >= to_unsigned(640,Xpixel1'length)) or (Ypixel1 >= to_unsigned(480,Ypixel1'length)) then
 			blank1 <= '1'; 
 		else 
 			blank1 <= '0';
@@ -211,7 +220,10 @@ begin
 	
 	
 	-- Character rom address:
-	CR_addr <= unsigned(VR_data(4 downto 0)) & Ypixel2(4 downto 2) & Xpixel2(4 downto 2);
+	--CR_addr <= unsigned(VR_data(4 downto 0)) & Ypixel2(4 downto 2) & Xpixel2(4 downto 2);
+	CR_addr <= (others => '0') when is_x(VR_data)
+          else unsigned(VR_data(4 downto 0)) & Ypixel2(4 downto 2) & Xpixel2(4 downto 2);
+
 	
 	U0b : char_rom port map (clk=>clk, addr=>CR_addr, data=>CR_data); -- one clock cycle delay.
 

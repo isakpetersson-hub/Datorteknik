@@ -79,11 +79,20 @@ begin
 	-- *  PS2Data_sr                     *
 	-- *                                 *
 	-- ***********************************
+	process(clk) begin
+		if rising_edge(clk) then
+		  if clear = '1' then
+			PS2Data_sr <= B"0_000000000_0";
+		  elsif PS2Clk_op = '1' then
+			PS2Data_sr <= PS2Data & PS2Data_sr(10 downto 1);
+		  end if;
+		end if;
+	  end process;
 
 
         
 
-        ScanCode_int <= PS2Data_sr(8 downto 1); -- To be used internally
+    ScanCode_int <= PS2Data_sr(8 downto 1); -- To be used internally
 	ScanCode <= ScanCode_int;  -- Not allowed to read from out signal
 
 
@@ -95,7 +104,19 @@ begin
 	-- *  PS2BitCounter & BC11           *
 	-- *                                 *
 	-- ***********************************
-
+	process(clk) begin
+		if rising_edge(clk) then
+		  if BC11 = '1' then
+			PS2BitCounter <= "0000";
+		  elsif PS2Clk_op = '1' then
+			if PS2BitCounter = "1011" then
+				BC11 <= '1';
+			else
+				PS2BitCounter <= PS2BitCounter + 1;
+			end if;
+		  end if;
+		end if;
+	  end process;
 
 
         -- PS2 state
@@ -108,10 +129,21 @@ begin
 	-- *  PS2State                       *
 	-- *                                 *
 	-- ***********************************
-
-
-
-        
-        MAKE_op <= '1' when PS2state = MAKE else '0';
-	
+	process(clk) begin
+		if rising_edge(clk) then
+			if PS2State = IDLE then
+				if (BC11 = '1' and ScanCode != "$F0") then
+					PS2State <= MAKE;
+				elsif (BC11 = '1' and ScanCode = "$F0") then 
+					PS2state <= BREAK;
+			elsif PS2State = BREAK then
+				if BC11 = '1' then
+					PS2state >= IDLE;
+			elsif PS2State = MAKE then
+				if MAKE_op = '1' then 
+					PS2state <= IDLE
+			end if;
+		end if;
+	end process;   
+    MAKE_op <= '1' when PS2state = MAKE else '0';
 end behavioral;

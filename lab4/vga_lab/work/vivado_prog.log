@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Feb 25 15:55:24 2026
-# Process ID: 138828
+# Start of session at: Fri Feb 27 14:30:56 2026
+# Process ID: 167325
 # Current directory: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work
 # Command line: vivado -mode batch -source /courses/TSEA83/bin/build.tcl -notrace -journal vivado_prog.jou -log vivado_prog.log -tclargs prog vga_lab.vhd kbd_enc.vhd pret_cpu.vhd video_ram.vhd vga_motor/vga_motor.vhd vga_motor/char_rom.vhd Basys3.xdc
 # Log file: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work/vivado_prog.log
@@ -57,4 +57,4 @@ INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed wi
 #### Program device
 
 INFO: [Labtools 27-3164] End of startup status: HIGH
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 25 15:55:30 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 27 14:31:03 2026...

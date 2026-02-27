@@ -34,8 +34,8 @@ architecture behavioral of KBD_ENC is
 	signal PS2Data_sr : std_logic_vector(10 downto 0);-- PS2 data shift register
 	signal ScanCode_int : std_logic_vector(7 downto 0); -- internal version of ScanCode
 	
-	signal PS2BitCounter : unsigned(3 downto 0); -- PS2 bit counter
-	signal BC11 : std_logic;                     -- '1' when PS2BitCounter = 11
+	signal PS2BitCounter : unsigned(3 downto 0) := X"0"; -- PS2 bit counter
+	signal BC11 : std_logic := '0';                     -- '1' when PS2BitCounter = 11
 	
 	type state_type is (IDLE, MAKE, BREAK); -- declare state types for PS2
 	signal PS2state : state_type;           -- PS2 state
@@ -81,7 +81,7 @@ begin
 	-- ***********************************
 	process(clk) begin
 		if rising_edge(clk) then
-		  if clear = '1' then
+		  if rst = '1' then
 			PS2Data_sr <= B"0_000000000_0";
 		  elsif PS2Clk_op = '1' then
 			PS2Data_sr <= PS2Data & PS2Data_sr(10 downto 1);
@@ -106,15 +106,19 @@ begin
 	-- ***********************************
 	process(clk) begin
 		if rising_edge(clk) then
-		  if BC11 = '1' then
-			PS2BitCounter <= "0000";
-		  elsif PS2Clk_op = '1' then
-			if PS2BitCounter = "1011" then
-				BC11 <= '1';
-			else
+			if rst = '1' then
+				PS2BitCounter <= "0000";
+				BC11 <= '0';
+			elsif PS2BitCounter = "1011" then
+				if BC11 = '1' then
+					PS2BitCounter <= "0000";
+					BC11 <= '0';
+				else 
+					BC11 <= '1';
+				end if;
+			elsif PS2Clk_op = '1' then
 				PS2BitCounter <= PS2BitCounter + 1;
 			end if;
-		  end if;
 		end if;
 	  end process;
 
@@ -131,17 +135,22 @@ begin
 	-- ***********************************
 	process(clk) begin
 		if rising_edge(clk) then
-			if PS2State = IDLE then
-				if (BC11 = '1' and ScanCode != "$F0") then
-					PS2State <= MAKE;
-				elsif (BC11 = '1' and ScanCode = "$F0") then 
-					PS2state <= BREAK;
+			if rst = '1' then
+				PS2State <= IDLE;
+			elsif PS2State = IDLE then
+				if (BC11 = '1') then
+					if (ScanCode_int = X"F0") then
+						PS2State <= BREAK;
+					else
+						PS2state <= MAKE;
+					end if;
+				end if;
 			elsif PS2State = BREAK then
 				if BC11 = '1' then
-					PS2state >= IDLE;
+					PS2state <= IDLE;
+				end if;
 			elsif PS2State = MAKE then
-				if MAKE_op = '1' then 
-					PS2state <= IDLE
+				PS2state <= IDLE;
 			end if;
 		end if;
 	end process;   

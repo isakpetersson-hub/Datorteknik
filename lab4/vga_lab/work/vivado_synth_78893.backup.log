@@ -3,13 +3,13 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Feb 25 15:47:58 2026
-# Process ID: 117133
+# Start of session at: Fri Feb 27 13:27:44 2026
+# Process ID: 78893
 # Current directory: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work
 # Command line: vivado -mode batch -source /courses/TSEA83/bin/build.tcl -notrace -journal vivado_synth.jou -log vivado_synth.log -tclargs synth vga_lab.vhd kbd_enc.vhd pret_cpu.vhd video_ram.vhd vga_motor/vga_motor.vhd vga_motor/char_rom.vhd Basys3.xdc
 # Log file: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work/vivado_synth.log
 # Journal file: /home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work/vivado_synth.jou
-# Running On: muxen2-112.ad.liu.se, OS: Linux, CPU Frequency: 1681.374 MHz, CPU Physical cores: 12, Host memory: 16198 MB
+# Running On: muxen2-112.ad.liu.se, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 12, Host memory: 16198 MB
 #-----------------------------------------------------------
 source /courses/TSEA83/bin/build.tcl -notrace
 
@@ -35,9 +35,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 117170
+INFO: [Synth 8-7075] Helper process launched with PID 78915
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2249.953 ; gain = 407.582 ; free physical = 160 ; free virtual = 15664
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2249.184 ; gain = 406.613 ; free physical = 1907 ; free virtual = 18020
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'vga_lab' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:30]
 INFO: [Synth 8-3491] module 'KBD_ENC' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/kbd_enc.vhd:17' bound to instance 'U0' of component 'kbd_enc' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:101]
@@ -51,42 +51,32 @@ INFO: [Synth 8-638] synthesizing module 'VIDEO_RAM' [/home/jakny046/Desktop/dato
 INFO: [Synth 8-256] done synthesizing module 'VIDEO_RAM' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/video_ram.vhd:39]
 INFO: [Synth 8-3491] module 'vga_motor' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:15' bound to instance 'U3' of component 'vga_motor' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:110]
 INFO: [Synth 8-638] synthesizing module 'vga_motor' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:30]
-INFO: [Synth 8-3491] module 'char_rom' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/char_rom.vhd:15' bound to instance 'U0b' of component 'char_rom' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:222]
+WARNING: [Synth 8-614] signal 'clear' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:123]
+WARNING: [Synth 8-614] signal 'clear' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:169]
+WARNING: [Synth 8-614] signal 'clear' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:189]
+INFO: [Synth 8-3491] module 'char_rom' declared at '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/char_rom.vhd:15' bound to instance 'U0b' of component 'char_rom' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:228]
 INFO: [Synth 8-638] synthesizing module 'char_rom' [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/char_rom.vhd:24]
 INFO: [Synth 8-256] done synthesizing module 'char_rom' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/char_rom.vhd:24]
 INFO: [Synth 8-256] done synthesizing module 'vga_motor' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:30]
 INFO: [Synth 8-256] done synthesizing module 'vga_lab' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_lab.vhd:30]
-WARNING: [Synth 8-3848] Net PS2Data_sr in module/entity KBD_ENC does not have driver. [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/kbd_enc.vhd:34]
-WARNING: [Synth 8-3936] Found unconnected internal register 'Xpixel2_reg' and it is trimmed from '10' to '5' bits. [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:210]
-WARNING: [Synth 8-3936] Found unconnected internal register 'Ypixel2_reg' and it is trimmed from '10' to '5' bits. [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:211]
+WARNING: [Synth 8-3936] Found unconnected internal register 'Xpixel2_reg' and it is trimmed from '10' to '5' bits. [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:216]
+WARNING: [Synth 8-3936] Found unconnected internal register 'Ypixel2_reg' and it is trimmed from '10' to '5' bits. [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/vga_motor/vga_motor.vhd:217]
 WARNING: [Synth 8-7129] Port VR_data[7] in module vga_motor is either unconnected or has no load
 WARNING: [Synth 8-7129] Port VR_data[6] in module vga_motor is either unconnected or has no load
 WARNING: [Synth 8-7129] Port VR_data[5] in module vga_motor is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[7] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[6] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[5] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[4] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[3] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[2] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[1] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ScanCode[0] in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PS2KeyboardCLK in module KBD_ENC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PS2KeyboardData in module KBD_ENC is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2329.922 ; gain = 487.551 ; free physical = 155 ; free virtual = 15498
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2330.152 ; gain = 487.582 ; free physical = 1819 ; free virtual = 17933
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2347.734 ; gain = 505.363 ; free physical = 164 ; free virtual = 15492
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2347.965 ; gain = 505.395 ; free physical = 1807 ; free virtual = 17921
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2347.734 ; gain = 505.363 ; free physical = 164 ; free virtual = 15492
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2347.965 ; gain = 505.395 ; free physical = 1807 ; free virtual = 17921
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2347.734 ; gain = 0.000 ; free physical = 163 ; free virtual = 15491
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2347.965 ; gain = 0.000 ; free physical = 1807 ; free virtual = 17921
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -97,28 +87,38 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/vga_lab_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2489.484 ; gain = 0.000 ; free physical = 156 ; free virtual = 15411
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2498.715 ; gain = 0.000 ; free physical = 1744 ; free virtual = 17868
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2489.520 ; gain = 0.000 ; free physical = 153 ; free virtual = 15409
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2498.750 ; gain = 0.000 ; free physical = 1743 ; free virtual = 17867
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 214 ; free virtual = 15408
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1753 ; free virtual = 17867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticpg236-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 213 ; free virtual = 15407
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1753 ; free virtual = 17867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 213 ; free virtual = 15408
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1753 ; free virtual = 17867
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'PS2state_reg' in module 'KBD_ENC'
 INFO: [Synth 8-802] inferred FSM for state register 'WRstate_reg' in module 'PRET_CPU'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE1 |                              010 |                               10
+                 iSTATE0 |                              100 |                               01
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'PS2state_reg' using encoding 'one-hot' in module 'KBD_ENC'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'WRstate_reg' in module 'PRE
 INFO: [Synth 8-3354] encoded FSM with state register 'WRstate_reg' using encoding 'one-hot' in module 'PRET_CPU'
 INFO: [Synth 8-3971] The signal "VIDEO_RAM:/VideoRAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 191 ; free virtual = 15407
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1742 ; free virtual = 17867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -139,14 +139,17 @@ Detailed RTL Component Info :
 	   2 Input   10 Bit       Adders := 2     
 	   2 Input    6 Bit       Adders := 2     
 	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 1     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
+	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
 	                8 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 11    
 +---RAMs : 
 	              16K Bit	(2048 X 8 bit)          RAMs := 1     
 +---ROMs : 
@@ -156,12 +159,13 @@ Detailed RTL Component Info :
 	   2 Input    6 Bit        Muxes := 6     
 	  32 Input    5 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 8     
+	   2 Input    3 Bit        Muxes := 3     
 	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 8     
+	   2 Input    1 Bit        Muxes := 12    
+	   4 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -178,12 +182,9 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port PS2Clk in module vga_lab is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PS2Data in module vga_lab is either unconnected or has no load
 WARNING: [Synth 8-3936] Found unconnected internal register 'U2/data_out2_reg' and it is trimmed from '8' to '5' bits. [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/video_ram.vhd:62]
-WARNING: [Synth 8-3332] Sequential element (U1/FSM_onehot_WRstate_reg[0]) is unused and will be removed from module vga_lab.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 370 ; free virtual = 15614
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1731 ; free virtual = 17861
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -212,13 +213,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 250 ; free virtual = 15609
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1733 ; free virtual = 17860
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 248 ; free virtual = 15609
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1724 ; free virtual = 17861
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -240,7 +241,7 @@ Start Technology Mapping
 INFO: [Synth 8-7052] The timing for the instance U2/VideoRAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U3/U0b/data_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 235 ; free virtual = 15609
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1724 ; free virtual = 17861
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -258,37 +259,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 230 ; free virtual = 15598
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1725 ; free virtual = 17852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 230 ; free virtual = 15598
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1725 ; free virtual = 17852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 230 ; free virtual = 15598
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1725 ; free virtual = 17852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 230 ; free virtual = 15598
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1725 ; free virtual = 17852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 220 ; free virtual = 15597
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1725 ; free virtual = 17852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 220 ; free virtual = 15597
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1715 ; free virtual = 17852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -305,53 +306,54 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |     2|
-|3     |LUT1     |     1|
-|4     |LUT2     |    12|
-|5     |LUT3     |     4|
-|6     |LUT4     |    11|
-|7     |LUT5     |     7|
-|8     |LUT6     |    12|
+|2     |CARRY4   |     5|
+|3     |LUT1     |     5|
+|4     |LUT2     |    33|
+|5     |LUT3     |    11|
+|6     |LUT4     |    25|
+|7     |LUT5     |    20|
+|8     |LUT6     |    52|
 |9     |RAMB18E1 |     2|
-|11    |FDRE     |    43|
-|12    |IBUF     |     2|
-|13    |OBUF     |    14|
+|11    |FDRE     |    70|
+|12    |FDSE     |     2|
+|13    |IBUF     |     4|
+|14    |OBUF     |    14|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 220 ; free virtual = 15597
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1715 ; free virtual = 17852
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2489.520 ; gain = 505.363 ; free physical = 220 ; free virtual = 15598
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2489.520 ; gain = 647.148 ; free physical = 220 ; free virtual = 15598
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2498.750 ; gain = 505.395 ; free physical = 1714 ; free virtual = 17851
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2498.750 ; gain = 656.180 ; free physical = 1714 ; free virtual = 17851
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2489.520 ; gain = 0.000 ; free physical = 219 ; free virtual = 15599
-INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2498.750 ; gain = 0.000 ; free physical = 2003 ; free virtual = 18140
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/Basys3.xdc]
 Finished Parsing XDC File [/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/Basys3.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2553.516 ; gain = 0.000 ; free physical = 484 ; free virtual = 15863
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2562.746 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18141
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4be6e67a
+Synth Design complete | Checksum: 7eebe898
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+39 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 2553.551 ; gain = 991.566 ; free physical = 482 ; free virtual = 15861
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2004.929; main = 1709.760; forked = 435.501
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4084.078; main = 2553.520; forked = 1626.605
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 2562.781 ; gain = 1056.473 ; free physical = 2004 ; free virtual = 18141
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2037.518; main = 1738.263; forked = 439.333
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4093.203; main = 2562.750; forked = 1626.500
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 481 ; free virtual = 15861
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 481 ; free virtual = 15861
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 481 ; free virtual = 15861
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18141
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18141
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18141
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 480 ; free virtual = 15861
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 480 ; free virtual = 15861
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 480 ; free virtual = 15860
-Write Physdb Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2585.531 ; gain = 0.000 ; free physical = 480 ; free virtual = 15860
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18141
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18141
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18142
+Write Physdb Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2594.762 ; gain = 0.000 ; free physical = 2004 ; free virtual = 18142
 INFO: [Common 17-1381] The checkpoint '/home/jakny046/Desktop/datorteknik/datorteknik/lab4/vga_lab/work/synth.dcp' has been generated.
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 25 15:48:18 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 27 13:28:03 2026...

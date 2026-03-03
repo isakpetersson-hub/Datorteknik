@@ -31,7 +31,9 @@ architecture behavioral of uart_lab is
 
     signal s1 : std_logic;          -- state of transmission
     signal start, stop : std_logic; -- start/stop transmission
-    signal counter : unsigned(13 downto 0);           -- transmission length counter
+    signal counter : unsigned(13 downto 0);    -- transmission length counter
+
+    signal bitcount : unsigned(3 downto 0) := X"0";
 
     signal clear : std_logic;       -- synchronous clear
 
@@ -41,74 +43,118 @@ begin
   -- *****************************
   -- *  synkroniseringsvippor    *
   -- *****************************
-  process(clk) begin
-    if rising_edge(clk) then
+process(clk) begin
+  if rising_edge(clk) then
+    if clear = '1' then
+      rx1 <= '1';
+      rx2 <= '1';
+    else
       rx1 <= RsRx;
       rx2 <= rx1;
     end if;
-  end process;
+  end if;
+end process;
 
   -- *****************************
   -- *       styrenhet           *
   -- *****************************
-  --dubbelkolla sensitivity listen kan vara cooked
-  process(clk, rx1, rx2, start) begin
-    if (rx1 = '0') and (rx2 = '1') then
-      start <= '1';
-    end if;
-    if start = '1' then 
-      if rising_edge(clk) then
-        sp <= '0';
-        counter <= counter+1;
-        if counter = "00001101100100" then
-          lp <= '1';
-          counter <= "00000000000000";
-          start <= '0';
+process(clk) begin
+  if rising_edge(clk) then
+    if clear = '1' then
+      counter <= (others => '0');
+      s1 <= '0';
+      sp <= '0';
+      lp <= '0';
+    else
+
+      sp <= '0';
+      lp <= '0';
+
+      -- Vänta på startbit
+      if s1 = '0' then
+        if rx2 = '0' then
+          s1 <= '1';
+          counter <= to_unsigned(434,14);
         end if;
-        if counter = "00000110110010" then
+
+      else
+        if counter = 0 then
           sp <= '1';
+          if bitcount = 9 then
+            s1 <= '0';
+            stop <= '1';
+            bitcount <= (others => '0');
+          else
+            bitcount <= bitcount + 1;
+          end if;          
+          counter <= to_unsigned(868,14);
+        else
+          counter <= counter - 1;
+        end if;
+      end if;
+      if stop = '1' then
+        stop <= '0';
+        lp <= '1';
+      end if;
+    end if;
+  end if;
+end process;
+
+  -- *****************************
+  -- * 10 bit skiftregister      *
+  -- *****************************
+
+  process(clk) begin
+    if rising_edge(clk) then
+      if clear = '1' then
+        sreg <= B"0_00000000_0";
+      elsif sp = '1' then
+        sreg <= rx2 & sreg(9 downto 1);
+      end if;
+    end if;
+  end process;
+    -- *****************************
+  -- * 2  bit register           *
+  -- *****************************
+
+  process(clk) begin
+    if rising_edge(clk) then
+      if clear = '1' then
+        pos <= "00";
+      elsif lp = '1' then
+        if pos = "11" then
+          pos <= "00";
+        else
+          pos <= pos + 1;
         end if;
       end if;
     end if;
   end process;
 
   -- *****************************
-  -- * 10 bit skiftregister      *
-  -- *****************************
-
-  process(sp, rx2, sreg) begin
-    if sp = '1' then 
-      sreg <= rx2 & sreg(9 downto 1);        --shift_left(sreg, rx2);
-    end if;
-  end process;
-
-  -- *****************************
-  -- * 2  bit register           *
-  -- *****************************
-
-process(lp) begin
-  if pos = "11" then
-    pos <= "00";
-  else 
-    pos <= pos+1;
-  end if;
-end process; 
-
-  -- *****************************
   -- * 16 bit register           *
   -- *****************************
 
-process(lp) begin
-  if pos = "00" then
-    hex4(15 downto 12) <= sreg(3 downto 0);
-  elsif pos = "01" then
-    hex4(11 downto 8) <= sreg(3 downto 0);
-  elsif pos = "10" then
-    hex4(7 downto 4) <= sreg(3 downto 0);
-  elsif pos = "11" then
-    hex4(3 downto 0) <= sreg(3 downto 0);
-  end if;
-end process; 
+  process(clk) begin
+    if rising_edge(clk) then
+      if clear = '1' then
+        hex4 <= X"0000";
+      elsif lp = '1' then
+
+        case pos is
+          when "00" =>
+            hex4(15 downto 12) <= sreg(4 downto 1);
+          when "01" =>
+            hex4(11 downto 8)  <= sreg(4 downto 1);
+          when "10" =>
+            hex4(7 downto 4)   <= sreg(4 downto 1);
+          when others =>
+            hex4(3 downto 0)   <= sreg(4 downto 1);
+        end case;
+
+      end if;
+    end if;
+  end process;
 
   -- *****************************
   -- * Multiplexad display       *

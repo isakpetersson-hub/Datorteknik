@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Feb 18 14:15:35 2026
-# Process ID: 105114
+# Start of session at: Fri Feb 20 14:05:34 2026
+# Process ID: 122427
 # Current directory: /home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/work
 # Command line: vivado -mode batch -source /courses/TSEA83/bin/build.tcl -notrace -journal vivado_synth.jou -log vivado_synth.log -tclargs synth uart_lab.vhd leddriver.vhd Basys3.xdc
 # Log file: /home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/work/vivado_synth.log
@@ -31,24 +31,22 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 105146
+INFO: [Synth 8-7075] Helper process launched with PID 122447
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2246.984 ; gain = 403.645 ; free physical = 168 ; free virtual = 16691
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2249.156 ; gain = 406.582 ; free physical = 785 ; free virtual = 17382
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'uart_lab' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:15]
-WARNING: [Synth 8-614] signal 'rx1' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:54]
-WARNING: [Synth 8-614] signal 'rx2' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:54]
-WARNING: [Synth 8-614] signal 'start' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:54]
-ERROR: [Synth 8-690] width mismatch in assignment; target has 10 bits, source has 11 bits [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:80]
-WARNING: [Synth 8-614] signal 'rx2' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:78]
-WARNING: [Synth 8-614] signal 'sreg' is read in the process but is not in the sensitivity list [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:78]
-ERROR: [Synth 8-285] failed synthesizing module 'uart_lab' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:15]
+ERROR: [Synth 8-9288] character ''0'' is not in type 'unsigned' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:64]
+ERROR: [Synth 8-9288] character ''0'' is not in type 'unsigned' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:85]
+INFO: [Synth 8-11252] unit 'behavioral' is ignored due to previous errors [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:166]
+INFO: [Synth 8-10443] VHDL file '/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd' is ignored due to errors
+INFO: [Synth 8-638] synthesizing module 'uart_lab' [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
+INFO: [Synth 8-256] done synthesizing module 'uart_lab' (0#1) [/home/jakny046/Desktop/datorteknik/datorteknik/lab3/uart_lab/uart_lab.vhd:6]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2321.922 ; gain = 478.582 ; free physical = 161 ; free virtual = 16583
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2322.125 ; gain = 479.551 ; free physical = 705 ; free virtual = 17303
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
-7 Infos, 5 Warnings, 0 Critical Warnings and 3 Errors encountered.
+10 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 18 14:15:47 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 20 14:05:44 2026...
